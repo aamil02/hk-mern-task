@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, onRemoveProduct }) => {
   if (products.length === 0) {
     return <p>No Product Found</p>;
   }
@@ -8,8 +8,21 @@ const ProductList = ({ products }) => {
   return (
     <ul className="space-y-2">
       {products.map((product, index) => (
-        <li key={index} className="border p-2">
-          {product.name} - ${product.price}
+        <li
+          key={index}
+          className="border p-2 flex justify-between items-center"
+        >
+          <span>
+            {product.name} - ${product.price}
+          </span>
+          <button
+            className="text-red-500 hover:text-red-700 cursor-pointer"
+            onClick={() => onRemoveProduct(index)}
+            title="Remove"
+          >
+            ❌
+            {/* Or use <X size={16} /> if using Lucide or other icons */}
+          </button>
         </li>
       ))}
     </ul>
