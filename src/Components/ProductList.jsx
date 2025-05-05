@@ -21,7 +21,6 @@ const ProductList = ({ products, onRemoveProduct }) => {
             title="Remove"
           >
             ❌
-            {/* Or use <X size={16} /> if using Lucide or other icons */}
           </button>
         </li>
       ))}

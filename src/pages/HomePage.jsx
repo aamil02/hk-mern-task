@@ -21,7 +21,7 @@ const HomePage = () => {
       setError(`Product "${product.name}" already exists.`);
     } else {
       setProducts([...products, product]);
-      setError(''); // Clear previous error
+      setError('');
     }
   };
 
@@ -47,7 +47,6 @@ const HomePage = () => {
         </button>
       </div>
 
-      {/* Show error message */}
       {error && <p className="text-red-500 mb-2">{error}</p>}
 
       <AddProductForm onAddProduct={addProduct} />
